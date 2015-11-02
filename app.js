@@ -183,12 +183,6 @@ var alki = {
   }
 }
 
-
-
-
-
-
-
 pikePlace.theLoop();
 seaTac.theLoop();
 southCenter.theLoop();
