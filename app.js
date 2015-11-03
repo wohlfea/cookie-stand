@@ -5,6 +5,7 @@ var pikePlace = {
   storeName: "Pike Place",
   hoursArray: ['10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: '],
   listHr: [],
+  listTtl: 0,
   custHr: function(){
     variance = Math.floor(Math.random()*(this.maxCustHr - this.minCustHr +1) + this.minCustHr);
     return variance;
@@ -23,7 +24,10 @@ var pikePlace = {
       listItem = document.createElement('LI');
       listItem.textContent = this.hoursArray[i] + this.listHr[i];
       listContainer.appendChild(listItem);
+      this.listTtl = this.listTtl + this.listHr[i];
     }
+    listItem.textContent = "Total: " + this.listTtl;
+    listContainer.appendChild(listItem)
     newDiv.appendChild(listContainer);
     document.body.appendChild(newDiv);
   }
@@ -36,6 +40,7 @@ var seaTac = {
   storeName: "SeaTac Airport",
   hoursArray: ['10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: '],
   listHr: [],
+  listTtl: 0,
   custHr: function(){
     variance = Math.floor(Math.random()*(this.maxCustHr - this.minCustHr +1) + this.minCustHr);
     return variance;
@@ -54,7 +59,10 @@ var seaTac = {
       listItem = document.createElement('LI');
       listItem.textContent = this.hoursArray[i] + this.listHr[i];
       listContainer.appendChild(listItem);
+      this.listTtl = this.listTtl + this.listHr[i];
     }
+    listItem.textContent = "Total: " + this.listTtl;
+    listContainer.appendChild(listItem)
     newDiv.appendChild(listContainer);
     document.body.appendChild(newDiv);
   }
@@ -67,6 +75,7 @@ var southCenter = {
   storeName: "South Center",
   hoursArray: ['10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: '],
   listHr: [],
+  listTtl: 0,
   custHr: function(){
     variance = Math.floor(Math.random()*(this.maxCustHr - this.minCustHr +1) + this.minCustHr);
     return variance;
@@ -82,10 +91,13 @@ var southCenter = {
     newDiv.innerHTML = "<h2 id='" + this.storeName + " Heading'>" + this.storeName + "</h2>";
     for(i=0; i < this.hoursArray.length; i++) {
       this.listHr.push(this.cookiesNeededHr());
-      makeListItem = document.createElement('LI');
-      makeListItem.textContent = this.hoursArray[i] + this.listHr[i];
-      listContainer.appendChild(makeListItem);
+      listItem = document.createElement('LI');
+      listItem.textContent = this.hoursArray[i] + this.listHr[i];
+      listContainer.appendChild(listItem);
+      this.listTtl = this.listTtl + this.listHr[i];
     }
+    listItem.textContent = "Total: " + this.listTtl;
+    listContainer.appendChild(listItem)
     newDiv.appendChild(listContainer);
     document.body.appendChild(newDiv);
   }
@@ -98,6 +110,7 @@ var bellSquare = {
   storeName: "Bellevue Square",
   hoursArray: ['10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: '],
   listHr: [],
+  listTtl: 0,
   custHr: function(){
     variance = Math.floor(Math.random()*(this.maxCustHr - this.minCustHr +1) + this.minCustHr);
     return variance;
@@ -116,7 +129,10 @@ var bellSquare = {
       listItem = document.createElement('LI');
       listItem.textContent = this.hoursArray[i] + this.listHr[i];
       listContainer.appendChild(listItem);
+      this.listTtl = this.listTtl + this.listHr[i];
     }
+    listItem.textContent = "Total: " + this.listTtl;
+    listContainer.appendChild(listItem)
     newDiv.appendChild(listContainer);
     document.body.appendChild(newDiv);
   }
@@ -129,6 +145,7 @@ var alki = {
   storeName: "Alki",
   hoursArray: ['10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: '],
   listHr: [],
+  listTtl: 0,
   custHr: function(){
     variance = Math.floor(Math.random()*(this.maxCustHr - this.minCustHr +1) + this.minCustHr);
     return variance;
@@ -147,7 +164,10 @@ var alki = {
       listItem = document.createElement('LI');
       listItem.textContent = this.hoursArray[i] + this.listHr[i];
       listContainer.appendChild(listItem);
+      this.listTtl = this.listTtl + this.listHr[i];
     }
+    listItem.textContent = "Total: " + this.listTtl;
+    listContainer.appendChild(listItem)
     newDiv.appendChild(listContainer);
     document.body.appendChild(newDiv);
   }
