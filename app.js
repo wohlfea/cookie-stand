@@ -1,3 +1,4 @@
+var body = document.body;
 var pikePlace = {
   minCustHr: 17,
   maxCustHr: 88,
@@ -19,8 +20,9 @@ var pikePlace = {
     for(i=0; i < this.hoursOpen; i++) {
       if(i === 0) {
         this.listHr.push(this.cookiesNeededHr());
-        this.displayName.innerHTML = "<h2 id='" + this.storeName + "'>" + this.storeName + "</h2>";
-        var makeListContainer = document.createElement('UL');
+        newDiv = document.createElement('DIV');
+        makeListContainer = document.createElement('UL');
+        newDiv.innerHTML = "<h2 id='" + this.storeName + "'>" + this.storeName + "</h2>";
         makeListItem = document.createElement('LI');
         makeListItem.textContent = this.hoursArray[i] + this.listHr[i];
         makeListContainer.appendChild(makeListItem);
@@ -31,7 +33,8 @@ var pikePlace = {
         makeListContainer.appendChild(makeListItem);
       }
     }
-    this.displayName.appendChild(makeListContainer);
+    newDiv.appendChild(makeListContainer);
+    document.body.appendChild(newDiv);
   }
 }
 
@@ -56,8 +59,9 @@ var seaTac = {
     for(i=0; i < this.hoursOpen; i++) {
       if(i === 0) {
         this.listHr.push(this.cookiesNeededHr());
-        this.displayName.innerHTML = "<h2 id='" + this.storeName + "'>" + this.storeName + "</h2>";
-        var makeListContainer = document.createElement('UL');
+        newDiv = document.createElement('DIV');
+        makeListContainer = document.createElement('UL');
+        newDiv.innerHTML = "<h2 id='" + this.storeName + "'>" + this.storeName + "</h2>";
         makeListItem = document.createElement('LI');
         makeListItem.textContent = this.hoursArray[i] + this.listHr[i];
         makeListContainer.appendChild(makeListItem);
@@ -68,7 +72,8 @@ var seaTac = {
         makeListContainer.appendChild(makeListItem);
       }
     }
-    this.displayName.appendChild(makeListContainer);
+    newDiv.appendChild(makeListContainer);
+    document.body.appendChild(newDiv);
   }
 }
 
@@ -93,8 +98,9 @@ var southCenter = {
     for(i=0; i < this.hoursOpen; i++) {
       if(i === 0) {
         this.listHr.push(this.cookiesNeededHr());
-        this.displayName.innerHTML = "<h2 id='" + this.storeName + "'>" + this.storeName + "</h2>";
-        var makeListContainer = document.createElement('UL');
+        newDiv = document.createElement('DIV');
+        makeListContainer = document.createElement('UL');
+        newDiv.innerHTML = "<h2 id='" + this.storeName + "'>" + this.storeName + "</h2>";
         makeListItem = document.createElement('LI');
         makeListItem.textContent = this.hoursArray[i] + this.listHr[i];
         makeListContainer.appendChild(makeListItem);
@@ -105,7 +111,8 @@ var southCenter = {
         makeListContainer.appendChild(makeListItem);
       }
     }
-    this.displayName.appendChild(makeListContainer);
+    newDiv.appendChild(makeListContainer);
+    document.body.appendChild(newDiv);
   }
 }
 
@@ -130,8 +137,9 @@ var bellSquare = {
     for(i=0; i < this.hoursOpen; i++) {
       if(i === 0) {
         this.listHr.push(this.cookiesNeededHr());
-        this.displayName.innerHTML = "<h2 id='" + this.storeName + "'>" + this.storeName + "</h2>";
-        var makeListContainer = document.createElement('UL');
+        newDiv = document.createElement('DIV');
+        makeListContainer = document.createElement('UL');
+        newDiv.innerHTML = "<h2 id='" + this.storeName + "'>" + this.storeName + "</h2>";
         makeListItem = document.createElement('LI');
         makeListItem.textContent = this.hoursArray[i] + this.listHr[i];
         makeListContainer.appendChild(makeListItem);
@@ -142,7 +150,8 @@ var bellSquare = {
         makeListContainer.appendChild(makeListItem);
       }
     }
-    this.displayName.appendChild(makeListContainer);
+    newDiv.appendChild(makeListContainer);
+    document.body.appendChild(newDiv);
   }
 }
 
@@ -167,8 +176,9 @@ var alki = {
     for(i=0; i < this.hoursOpen; i++) {
       if(i === 0) {
         this.listHr.push(this.cookiesNeededHr());
-        this.displayName.innerHTML = "<h2 id='" + this.storeName + "'>" + this.storeName + "</h2>";
-        var makeListContainer = document.createElement('UL');
+        newDiv = document.createElement('DIV');
+        makeListContainer = document.createElement('UL');
+        newDiv.innerHTML = "<h2 id='" + this.storeName + "'>" + this.storeName + "</h2>";
         makeListItem = document.createElement('LI');
         makeListItem.textContent = this.hoursArray[i] + this.listHr[i];
         makeListContainer.appendChild(makeListItem);
@@ -179,7 +189,8 @@ var alki = {
         makeListContainer.appendChild(makeListItem);
       }
     }
-    this.displayName.appendChild(makeListContainer);
+    newDiv.appendChild(makeListContainer);
+    document.body.appendChild(newDiv);
   }
 }
 
