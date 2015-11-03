@@ -16,15 +16,15 @@ var pikePlace = {
   theLoop: function(){
     newDiv = document.createElement('DIV');
     newDiv.setAttribute('id', this.storeName + " Div");
-    makeListContainer = document.createElement('UL');
+    listContainer = document.createElement('UL');
     newDiv.innerHTML = "<h2 id='" + this.storeName + " Heading'>" + this.storeName + "</h2>";
     for(i=0; i < this.hoursArray.length; i++) {
       this.listHr.push(this.cookiesNeededHr());
-      makeListItem = document.createElement('LI');
-      makeListItem.textContent = this.hoursArray[i] + this.listHr[i];
-      makeListContainer.appendChild(makeListItem);
+      listItem = document.createElement('LI');
+      listItem.textContent = this.hoursArray[i] + this.listHr[i];
+      listContainer.appendChild(listItem);
     }
-    newDiv.appendChild(makeListContainer);
+    newDiv.appendChild(listContainer);
     document.body.appendChild(newDiv);
   }
 }
@@ -47,15 +47,15 @@ var seaTac = {
   theLoop: function(){
     newDiv = document.createElement('DIV');
     newDiv.setAttribute('id', this.storeName + " Div");
-    makeListContainer = document.createElement('UL');
+    listContainer = document.createElement('UL');
     newDiv.innerHTML = "<h2 id='" + this.storeName + " Heading'>" + this.storeName + "</h2>";
     for(i=0; i < this.hoursArray.length; i++) {
       this.listHr.push(this.cookiesNeededHr());
-      makeListItem = document.createElement('LI');
-      makeListItem.textContent = this.hoursArray[i] + this.listHr[i];
-      makeListContainer.appendChild(makeListItem);
+      listItem = document.createElement('LI');
+      listItem.textContent = this.hoursArray[i] + this.listHr[i];
+      listContainer.appendChild(listItem);
     }
-    newDiv.appendChild(makeListContainer);
+    newDiv.appendChild(listContainer);
     document.body.appendChild(newDiv);
   }
 }
@@ -78,15 +78,15 @@ var southCenter = {
   theLoop: function(){
     newDiv = document.createElement('DIV');
     newDiv.setAttribute('id', this.storeName + " Div");
-    makeListContainer = document.createElement('UL');
+    listContainer = document.createElement('UL');
     newDiv.innerHTML = "<h2 id='" + this.storeName + " Heading'>" + this.storeName + "</h2>";
     for(i=0; i < this.hoursArray.length; i++) {
       this.listHr.push(this.cookiesNeededHr());
       makeListItem = document.createElement('LI');
       makeListItem.textContent = this.hoursArray[i] + this.listHr[i];
-      makeListContainer.appendChild(makeListItem);
+      listContainer.appendChild(makeListItem);
     }
-    newDiv.appendChild(makeListContainer);
+    newDiv.appendChild(listContainer);
     document.body.appendChild(newDiv);
   }
 }
@@ -109,15 +109,15 @@ var bellSquare = {
   theLoop: function(){
     newDiv = document.createElement('DIV');
     newDiv.setAttribute('id', this.storeName + " Div");
-    makeListContainer = document.createElement('UL');
+    listContainer = document.createElement('UL');
     newDiv.innerHTML = "<h2 id='" + this.storeName + " Heading'>" + this.storeName + "</h2>";
     for(i=0; i < this.hoursArray.length; i++) {
       this.listHr.push(this.cookiesNeededHr());
-      makeListItem = document.createElement('LI');
-      makeListItem.textContent = this.hoursArray[i] + this.listHr[i];
-      makeListContainer.appendChild(makeListItem);
+      listItem = document.createElement('LI');
+      listItem.textContent = this.hoursArray[i] + this.listHr[i];
+      listContainer.appendChild(listItem);
     }
-    newDiv.appendChild(makeListContainer);
+    newDiv.appendChild(listContainer);
     document.body.appendChild(newDiv);
   }
 }
@@ -140,15 +140,15 @@ var alki = {
   theLoop: function(){
     newDiv = document.createElement('DIV');
     newDiv.setAttribute('id', this.storeName + " Div");
-    makeListContainer = document.createElement('UL');
+    listContainer = document.createElement('UL');
     newDiv.innerHTML = "<h2 id='" + this.storeName + " Heading'>" + this.storeName + "</h2>";
     for(i=0; i < this.hoursArray.length; i++) {
       this.listHr.push(this.cookiesNeededHr());
-      makeListItem = document.createElement('LI');
-      makeListItem.textContent = this.hoursArray[i] + this.listHr[i];
-      makeListContainer.appendChild(makeListItem);
+      listItem = document.createElement('LI');
+      listItem.textContent = this.hoursArray[i] + this.listHr[i];
+      listContainer.appendChild(listItem);
     }
-    newDiv.appendChild(makeListContainer);
+    newDiv.appendChild(listContainer);
     document.body.appendChild(newDiv);
   }
 }
