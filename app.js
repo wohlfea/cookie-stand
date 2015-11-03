@@ -1,6 +1,7 @@
 var table = document.getElementById('table');
 var topRow = document.getElementById('topRow');
 var hoursArray = ['10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm'];
+
 function Store (minCustHr, maxCustHr, avgCookiesHr, storeName) {
   this.minCustHr =  minCustHr;
   this.maxCustHr = maxCustHr;
@@ -16,21 +17,27 @@ function Store (minCustHr, maxCustHr, avgCookiesHr, storeName) {
     cookiesNeeded = this.custHr() * this.avgCookiesHr;
     return Math.ceil(cookiesNeeded);
   };
-  this.theLoop = function(){
+  this.makeNewRow = function(){
     newRow = document.createElement('TR');
     newRow.setAttribute('id', this.storeName + " Row");
     newHeading = document.createElement('TH');
     newHeading.textContent = this.storeName;
     newRow.appendChild(newHeading);
+  };
+  this.displayTotal = function() {
+    if (i !== hoursArray.length){
+    this.listTtl = this.listTtl + this.listHr[i];
+    console.log(this.storeName + " " + hoursArray[i] + " " + this.listHr[i]);
+    }
+  };
+  this.theLoop = function(){
+    this.makeNewRow();
     for(i=0; i <= hoursArray.length; i++) {
       this.listHr.push(this.cookiesNeededHr());
       tblItem = document.createElement('TD');
       tblItem.textContent = this.listHr[i];
       newRow.appendChild(tblItem);
-      if (i !== hoursArray.length){
-      this.listTtl = this.listTtl + this.listHr[i];
-      console.log(this.storeName + " " + hoursArray[i] + " " + this.listHr[i]);
-    }
+      this.displayTotal();
     }
     tblItem.textContent = this.listTtl;
     newRow.appendChild(tblItem);
@@ -53,13 +60,10 @@ for(i=-1; i <= hoursArray.length; i++){
     topRowItem.textContent = "TOTAL";
     topRow.appendChild(topRowItem);
   }
-  }
-
+}
 
 pikePlace.theLoop();
 seaTac.theLoop();
 southCenter.theLoop();
 bellSquare.theLoop();
 alki.theLoop();
-
-
