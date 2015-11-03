@@ -1,11 +1,11 @@
-var display = document.getElementById('display');
 var table = document.getElementById('table');
+var topRow = document.getElementById('topRow');
+var hoursArray = ['10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm'];
 function Store (minCustHr, maxCustHr, avgCookiesHr, storeName) {
   this.minCustHr =  minCustHr;
   this.maxCustHr = maxCustHr;
   this.avgCookiesHr =  avgCookiesHr;
   this.storeName = storeName;
-  this.hoursArray = ['10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: '];
   this.listHr = [];
   this.listTtl = 0;
   this.custHr = function(){
@@ -17,22 +17,24 @@ function Store (minCustHr, maxCustHr, avgCookiesHr, storeName) {
     return Math.ceil(cookiesNeeded);
   };
   this.theLoop = function(){
-    newDiv = document.createElement('DIV');
-    newDiv.setAttribute('id', this.storeName + " Div");
-    listContainer = document.createElement('UL');
-    listContainer.setAttribute('id', this.storeName + " List");
-    newDiv.innerHTML = "<h2 id='" + this.storeName + " Heading'>" + this.storeName + "</h2>";
-    for(i=0; i < this.hoursArray.length; i++) {
+    newRow = document.createElement('TR');
+    newRow.setAttribute('id', this.storeName + " Row");
+    newHeading = document.createElement('TH');
+    newHeading.textContent = this.storeName;
+    newRow.appendChild(newHeading);
+    for(i=0; i <= hoursArray.length; i++) {
       this.listHr.push(this.cookiesNeededHr());
-      listItem = document.createElement('LI');
-      listItem.textContent = this.hoursArray[i] + this.listHr[i];
-      listContainer.appendChild(listItem);
+      tblItem = document.createElement('TD');
+      tblItem.textContent = this.listHr[i];
+      newRow.appendChild(tblItem);
+      if (i !== hoursArray.length){
       this.listTtl = this.listTtl + this.listHr[i];
+      console.log(this.storeName + " " + hoursArray[i] + " " + this.listHr[i]);
     }
-    listItem.textContent = "Total: " + this.listTtl;
-    listContainer.appendChild(listItem)
-    newDiv.appendChild(listContainer);
-    display.appendChild(newDiv);
+    }
+    tblItem.textContent = this.listTtl;
+    newRow.appendChild(tblItem);
+    table.appendChild(newRow);
   };
 }
 
@@ -41,6 +43,18 @@ var seaTac = new Store(6, 44, 1.2, "Sea-Tac");
 var southCenter = new Store(11, 38, 1.9, "South Center Mall");
 var bellSquare = new Store(20, 48, 3.3, "Bellevue Square");
 var alki = new Store(3, 24, 2.6, "Alki Beach");
+
+for(i=-1; i <= hoursArray.length; i++){
+    var topRowItem = document.createElement('TH');
+    topRowItem.textContent = hoursArray[i];
+    topRow.appendChild(topRowItem);
+    if (i === hoursArray.length-1){
+    var topRowItem = document.createElement('TH');
+    topRowItem.textContent = "TOTAL";
+    topRow.appendChild(topRowItem);
+  }
+  }
+
 
 pikePlace.theLoop();
 seaTac.theLoop();
