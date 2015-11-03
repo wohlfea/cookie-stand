@@ -1,3 +1,4 @@
+var display = document.getElementById('display');
 var pikePlace = {
   minCustHr: 17,
   maxCustHr: 88,
@@ -29,7 +30,7 @@ var pikePlace = {
     listItem.textContent = "Total: " + this.listTtl;
     listContainer.appendChild(listItem)
     newDiv.appendChild(listContainer);
-    document.body.appendChild(newDiv);
+    display.appendChild(newDiv);
   }
 }
 
@@ -64,7 +65,7 @@ var seaTac = {
     listItem.textContent = "Total: " + this.listTtl;
     listContainer.appendChild(listItem)
     newDiv.appendChild(listContainer);
-    document.body.appendChild(newDiv);
+    display.appendChild(newDiv);
   }
 }
 
@@ -99,7 +100,7 @@ var southCenter = {
     listItem.textContent = "Total: " + this.listTtl;
     listContainer.appendChild(listItem)
     newDiv.appendChild(listContainer);
-    document.body.appendChild(newDiv);
+    display.appendChild(newDiv);
   }
 }
 
@@ -134,7 +135,7 @@ var bellSquare = {
     listItem.textContent = "Total: " + this.listTtl;
     listContainer.appendChild(listItem)
     newDiv.appendChild(listContainer);
-    document.body.appendChild(newDiv);
+    display.appendChild(newDiv);
   }
 }
 
@@ -169,7 +170,7 @@ var alki = {
     listItem.textContent = "Total: " + this.listTtl;
     listContainer.appendChild(listItem)
     newDiv.appendChild(listContainer);
-    document.body.appendChild(newDiv);
+    display.appendChild(newDiv);
   }
 }
 
