@@ -19,6 +19,7 @@ var pikePlace = {
     newDiv = document.createElement('DIV');
     newDiv.setAttribute('id', this.storeName + " Div");
     listContainer = document.createElement('UL');
+    listContainer.setAttribute('id', this.storeName + " List");
     newDiv.innerHTML = "<h2 id='" + this.storeName + " Heading'>" + this.storeName + "</h2>";
     for(i=0; i < this.hoursArray.length; i++) {
       this.listHr.push(this.cookiesNeededHr());
