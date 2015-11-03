@@ -1,4 +1,3 @@
-var body = document.body;
 var pikePlace = {
   minCustHr: 17,
   maxCustHr: 88,
@@ -17,21 +16,15 @@ var pikePlace = {
     return Math.ceil(cookiesNeeded);
   },
   theLoop: function(){
+    newDiv = document.createElement('DIV');
+    newDiv.setAttribute('id', this.storeName + " Div");
+    makeListContainer = document.createElement('UL');
+    newDiv.innerHTML = "<h2 id='" + this.storeName + " Heading'>" + this.storeName + "</h2>";
     for(i=0; i < this.hoursOpen; i++) {
-      if(i === 0) {
-        this.listHr.push(this.cookiesNeededHr());
-        newDiv = document.createElement('DIV');
-        makeListContainer = document.createElement('UL');
-        newDiv.innerHTML = "<h2 id='" + this.storeName + "'>" + this.storeName + "</h2>";
-        makeListItem = document.createElement('LI');
-        makeListItem.textContent = this.hoursArray[i] + this.listHr[i];
-        makeListContainer.appendChild(makeListItem);
-      } else {
-        this.listHr.push(this.cookiesNeededHr());
-        makeListItem = document.createElement('LI');
-        makeListItem.textContent = this.hoursArray[i] + this.listHr[i];
-        makeListContainer.appendChild(makeListItem);
-      }
+      this.listHr.push(this.cookiesNeededHr());
+      makeListItem = document.createElement('LI');
+      makeListItem.textContent = this.hoursArray[i] + this.listHr[i];
+      makeListContainer.appendChild(makeListItem);
     }
     newDiv.appendChild(makeListContainer);
     document.body.appendChild(newDiv);
@@ -56,21 +49,15 @@ var seaTac = {
     return Math.ceil(cookiesNeeded);
   },
   theLoop: function(){
+    newDiv = document.createElement('DIV');
+    newDiv.setAttribute('id', this.storeName + " Div");
+    makeListContainer = document.createElement('UL');
+    newDiv.innerHTML = "<h2 id='" + this.storeName + " Heading'>" + this.storeName + "</h2>";
     for(i=0; i < this.hoursOpen; i++) {
-      if(i === 0) {
-        this.listHr.push(this.cookiesNeededHr());
-        newDiv = document.createElement('DIV');
-        makeListContainer = document.createElement('UL');
-        newDiv.innerHTML = "<h2 id='" + this.storeName + "'>" + this.storeName + "</h2>";
-        makeListItem = document.createElement('LI');
-        makeListItem.textContent = this.hoursArray[i] + this.listHr[i];
-        makeListContainer.appendChild(makeListItem);
-      } else {
-        this.listHr.push(this.cookiesNeededHr());
-        makeListItem = document.createElement('LI');
-        makeListItem.textContent = this.hoursArray[i] + this.listHr[i];
-        makeListContainer.appendChild(makeListItem);
-      }
+      this.listHr.push(this.cookiesNeededHr());
+      makeListItem = document.createElement('LI');
+      makeListItem.textContent = this.hoursArray[i] + this.listHr[i];
+      makeListContainer.appendChild(makeListItem);
     }
     newDiv.appendChild(makeListContainer);
     document.body.appendChild(newDiv);
@@ -95,21 +82,15 @@ var southCenter = {
     return Math.ceil(cookiesNeeded);
   },
   theLoop: function(){
+    newDiv = document.createElement('DIV');
+    newDiv.setAttribute('id', this.storeName + " Div");
+    makeListContainer = document.createElement('UL');
+    newDiv.innerHTML = "<h2 id='" + this.storeName + " Heading'>" + this.storeName + "</h2>";
     for(i=0; i < this.hoursOpen; i++) {
-      if(i === 0) {
-        this.listHr.push(this.cookiesNeededHr());
-        newDiv = document.createElement('DIV');
-        makeListContainer = document.createElement('UL');
-        newDiv.innerHTML = "<h2 id='" + this.storeName + "'>" + this.storeName + "</h2>";
-        makeListItem = document.createElement('LI');
-        makeListItem.textContent = this.hoursArray[i] + this.listHr[i];
-        makeListContainer.appendChild(makeListItem);
-      } else {
-        this.listHr.push(this.cookiesNeededHr());
-        makeListItem = document.createElement('LI');
-        makeListItem.textContent = this.hoursArray[i] + this.listHr[i];
-        makeListContainer.appendChild(makeListItem);
-      }
+      this.listHr.push(this.cookiesNeededHr());
+      makeListItem = document.createElement('LI');
+      makeListItem.textContent = this.hoursArray[i] + this.listHr[i];
+      makeListContainer.appendChild(makeListItem);
     }
     newDiv.appendChild(makeListContainer);
     document.body.appendChild(newDiv);
@@ -134,21 +115,15 @@ var bellSquare = {
     return Math.ceil(cookiesNeeded);
   },
   theLoop: function(){
+    newDiv = document.createElement('DIV');
+    newDiv.setAttribute('id', this.storeName + " Div");
+    makeListContainer = document.createElement('UL');
+    newDiv.innerHTML = "<h2 id='" + this.storeName + " Heading'>" + this.storeName + "</h2>";
     for(i=0; i < this.hoursOpen; i++) {
-      if(i === 0) {
-        this.listHr.push(this.cookiesNeededHr());
-        newDiv = document.createElement('DIV');
-        makeListContainer = document.createElement('UL');
-        newDiv.innerHTML = "<h2 id='" + this.storeName + "'>" + this.storeName + "</h2>";
-        makeListItem = document.createElement('LI');
-        makeListItem.textContent = this.hoursArray[i] + this.listHr[i];
-        makeListContainer.appendChild(makeListItem);
-      } else {
-        this.listHr.push(this.cookiesNeededHr());
-        makeListItem = document.createElement('LI');
-        makeListItem.textContent = this.hoursArray[i] + this.listHr[i];
-        makeListContainer.appendChild(makeListItem);
-      }
+      this.listHr.push(this.cookiesNeededHr());
+      makeListItem = document.createElement('LI');
+      makeListItem.textContent = this.hoursArray[i] + this.listHr[i];
+      makeListContainer.appendChild(makeListItem);
     }
     newDiv.appendChild(makeListContainer);
     document.body.appendChild(newDiv);
@@ -173,21 +148,15 @@ var alki = {
     return Math.ceil(cookiesNeeded);
   },
   theLoop: function(){
+    newDiv = document.createElement('DIV');
+    newDiv.setAttribute('id', this.storeName + " Div");
+    makeListContainer = document.createElement('UL');
+    newDiv.innerHTML = "<h2 id='" + this.storeName + " Heading'>" + this.storeName + "</h2>";
     for(i=0; i < this.hoursOpen; i++) {
-      if(i === 0) {
-        this.listHr.push(this.cookiesNeededHr());
-        newDiv = document.createElement('DIV');
-        makeListContainer = document.createElement('UL');
-        newDiv.innerHTML = "<h2 id='" + this.storeName + "'>" + this.storeName + "</h2>";
-        makeListItem = document.createElement('LI');
-        makeListItem.textContent = this.hoursArray[i] + this.listHr[i];
-        makeListContainer.appendChild(makeListItem);
-      } else {
-        this.listHr.push(this.cookiesNeededHr());
-        makeListItem = document.createElement('LI');
-        makeListItem.textContent = this.hoursArray[i] + this.listHr[i];
-        makeListContainer.appendChild(makeListItem);
-      }
+      this.listHr.push(this.cookiesNeededHr());
+      makeListItem = document.createElement('LI');
+      makeListItem.textContent = this.hoursArray[i] + this.listHr[i];
+      makeListContainer.appendChild(makeListItem);
     }
     newDiv.appendChild(makeListContainer);
     document.body.appendChild(newDiv);
