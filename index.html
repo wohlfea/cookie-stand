@@ -10,6 +10,27 @@
 <body>
   <header>The Cookie Counter<img src='img/salmon.png'></header>
     <h3>Cookies Needed Per Hour</h3>
+    <form>
+      <fieldset>
+        <legend>Create New Store</legend>
+
+        <label>Cookie Stand Location:</label>
+        <input name="locationInput" type="text" size="50">
+
+        <label>Minimum Customers Per Hour:</label>
+        <input name="minCustInput" type="text" size="50">
+
+        <label>Maximum Customers Per Hour:</label>
+        <input name="maxCustInput" type="text" size="50">
+
+        <label>Average Customers Per Hour:</label>
+        <input name="avgPerCustInput" type="text" size="50">
+
+        <button id='SubmitButton' type="submit">Create Store!</button>
+
+      </fieldset>
+    </form>
+
     <table id='table'>
       <tr id="topRow"></tr>
     </table>
