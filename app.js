@@ -1,6 +1,6 @@
 var table = document.getElementById('table');
 var topRow = document.getElementById('topRow');
-var hoursArray = ['10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm'];
+var hoursArray = ['10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM'];
 
 function Store (minCustHr, maxCustHr, avgCookiesHr, storeName) {
   this.minCustHr =  minCustHr;
@@ -24,7 +24,7 @@ function Store (minCustHr, maxCustHr, avgCookiesHr, storeName) {
     newHeading.textContent = this.storeName;
     newRow.appendChild(newHeading);
   };
-  this.displayTotal = function() {
+  this.calcTotal = function() {
     if (i !== hoursArray.length){
     this.listTtl = this.listTtl + this.listHr[i];
     console.log(this.storeName + " " + hoursArray[i] + " " + this.listHr[i]);
@@ -37,7 +37,7 @@ function Store (minCustHr, maxCustHr, avgCookiesHr, storeName) {
       tblItem = document.createElement('TD');
       tblItem.textContent = this.listHr[i];
       newRow.appendChild(tblItem);
-      this.displayTotal();
+      this.calcTotal();
     }
     tblItem.textContent = this.listTtl;
     newRow.appendChild(tblItem);
@@ -51,17 +51,19 @@ var southCenter = new Store(11, 38, 1.9, "South Center Mall");
 var bellSquare = new Store(20, 48, 3.3, "Bellevue Square");
 var alki = new Store(3, 24, 2.6, "Alki Beach");
 
-for(i=-1; i <= hoursArray.length; i++){
-    var topRowItem = document.createElement('TH');
-    topRowItem.textContent = hoursArray[i];
-    topRow.appendChild(topRowItem);
-    if (i === hoursArray.length-1){
-    var topRowItem = document.createElement('TH');
-    topRowItem.textContent = "TOTAL";
-    topRow.appendChild(topRowItem);
+function makeTopRow (){
+  for(i=-1; i <= hoursArray.length; i++){
+      var topRowItem = document.createElement('TH');
+      topRowItem.textContent = hoursArray[i];
+      topRow.appendChild(topRowItem);
+      if (i === hoursArray.length-1){
+      var topRowItem = document.createElement('TH');
+      topRowItem.textContent = "TOTAL";
+      topRow.appendChild(topRowItem);
+    }
   }
 }
-
+makeTopRow();
 pikePlace.theLoop();
 seaTac.theLoop();
 southCenter.theLoop();
