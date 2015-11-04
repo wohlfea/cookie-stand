@@ -1,177 +1,64 @@
-var display = document.getElementById('display');
-var pikePlace = {
-  minCustHr: 17,
-  maxCustHr: 88,
-  avgCookiesHr: 5.2,
-  storeName: "Pike Place",
-  hoursArray: ['10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: '],
-  listHr: [],
-  listTtl: 0,
-  custHr: function(){
+var table = document.getElementById('table');
+var topRow = document.getElementById('topRow');
+var hoursArray = ['10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm'];
+
+function Store (minCustHr, maxCustHr, avgCookiesHr, storeName) {
+  this.minCustHr =  minCustHr;
+  this.maxCustHr = maxCustHr;
+  this.avgCookiesHr =  avgCookiesHr;
+  this.storeName = storeName;
+  this.listHr = [];
+  this.listTtl = 0;
+  this.custHr = function(){
     variance = Math.floor(Math.random()*(this.maxCustHr - this.minCustHr +1) + this.minCustHr);
     return variance;
-  },
-  cookiesNeededHr: function(){
+  };
+  this.cookiesNeededHr = function(){
     cookiesNeeded = this.custHr() * this.avgCookiesHr;
     return Math.ceil(cookiesNeeded);
-  },
-  theLoop: function(){
-    newDiv = document.createElement('DIV');
-    newDiv.setAttribute('id', this.storeName + " Div");
-    listContainer = document.createElement('UL');
-    listContainer.setAttribute('id', this.storeName + " List");
-    newDiv.innerHTML = "<h2 id='" + this.storeName + " Heading'>" + this.storeName + "</h2>";
-    for(i=0; i < this.hoursArray.length; i++) {
-      this.listHr.push(this.cookiesNeededHr());
-      listItem = document.createElement('LI');
-      listItem.textContent = this.hoursArray[i] + this.listHr[i];
-      listContainer.appendChild(listItem);
-      this.listTtl = this.listTtl + this.listHr[i];
+  };
+  this.makeNewRow = function(){
+    newRow = document.createElement('TR');
+    newRow.setAttribute('id', this.storeName + " Row");
+    newHeading = document.createElement('TH');
+    newHeading.textContent = this.storeName;
+    newRow.appendChild(newHeading);
+  };
+  this.displayTotal = function() {
+    if (i !== hoursArray.length){
+    this.listTtl = this.listTtl + this.listHr[i];
+    console.log(this.storeName + " " + hoursArray[i] + " " + this.listHr[i]);
     }
-    listItem.textContent = "Total: " + this.listTtl;
-    listContainer.appendChild(listItem)
-    newDiv.appendChild(listContainer);
-    display.appendChild(newDiv);
-  }
+  };
+  this.theLoop = function(){
+    this.makeNewRow();
+    for(i=0; i <= hoursArray.length; i++) {
+      this.listHr.push(this.cookiesNeededHr());
+      tblItem = document.createElement('TD');
+      tblItem.textContent = this.listHr[i];
+      newRow.appendChild(tblItem);
+      this.displayTotal();
+    }
+    tblItem.textContent = this.listTtl;
+    newRow.appendChild(tblItem);
+    table.appendChild(newRow);
+  };
 }
 
-var seaTac = {
-  minCustHr: 6,
-  maxCustHr: 44,
-  avgCookiesHr: 1.2,
-  storeName: "SeaTac Airport",
-  hoursArray: ['10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: '],
-  listHr: [],
-  listTtl: 0,
-  custHr: function(){
-    variance = Math.floor(Math.random()*(this.maxCustHr - this.minCustHr +1) + this.minCustHr);
-    return variance;
-  },
-  cookiesNeededHr: function(){
-    cookiesNeeded = this.custHr() * this.avgCookiesHr;
-    return Math.ceil(cookiesNeeded);
-  },
-  theLoop: function(){
-    newDiv = document.createElement('DIV');
-    newDiv.setAttribute('id', this.storeName + " Div");
-    listContainer = document.createElement('UL');
-    newDiv.innerHTML = "<h2 id='" + this.storeName + " Heading'>" + this.storeName + "</h2>";
-    for(i=0; i < this.hoursArray.length; i++) {
-      this.listHr.push(this.cookiesNeededHr());
-      listItem = document.createElement('LI');
-      listItem.textContent = this.hoursArray[i] + this.listHr[i];
-      listContainer.appendChild(listItem);
-      this.listTtl = this.listTtl + this.listHr[i];
-    }
-    listItem.textContent = "Total: " + this.listTtl;
-    listContainer.appendChild(listItem)
-    newDiv.appendChild(listContainer);
-    display.appendChild(newDiv);
-  }
-}
+var pikePlace = new Store(17, 88, 5.2, "Pike Place Market");
+var seaTac = new Store(6, 44, 1.2, "Sea-Tac");
+var southCenter = new Store(11, 38, 1.9, "South Center Mall");
+var bellSquare = new Store(20, 48, 3.3, "Bellevue Square");
+var alki = new Store(3, 24, 2.6, "Alki Beach");
 
-var southCenter = {
-  minCustHr: 11,
-  maxCustHr: 38,
-  avgCookiesHr: 1.9,
-  storeName: "South Center",
-  hoursArray: ['10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: '],
-  listHr: [],
-  listTtl: 0,
-  custHr: function(){
-    variance = Math.floor(Math.random()*(this.maxCustHr - this.minCustHr +1) + this.minCustHr);
-    return variance;
-  },
-  cookiesNeededHr: function(){
-    cookiesNeeded = this.custHr() * this.avgCookiesHr;
-    return Math.ceil(cookiesNeeded);
-  },
-  theLoop: function(){
-    newDiv = document.createElement('DIV');
-    newDiv.setAttribute('id', this.storeName + " Div");
-    listContainer = document.createElement('UL');
-    newDiv.innerHTML = "<h2 id='" + this.storeName + " Heading'>" + this.storeName + "</h2>";
-    for(i=0; i < this.hoursArray.length; i++) {
-      this.listHr.push(this.cookiesNeededHr());
-      listItem = document.createElement('LI');
-      listItem.textContent = this.hoursArray[i] + this.listHr[i];
-      listContainer.appendChild(listItem);
-      this.listTtl = this.listTtl + this.listHr[i];
-    }
-    listItem.textContent = "Total: " + this.listTtl;
-    listContainer.appendChild(listItem)
-    newDiv.appendChild(listContainer);
-    display.appendChild(newDiv);
-  }
-}
-
-var bellSquare = {
-  minCustHr: 20,
-  maxCustHr: 48,
-  avgCookiesHr: 3.3,
-  storeName: "Bellevue Square",
-  hoursArray: ['10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: '],
-  listHr: [],
-  listTtl: 0,
-  custHr: function(){
-    variance = Math.floor(Math.random()*(this.maxCustHr - this.minCustHr +1) + this.minCustHr);
-    return variance;
-  },
-  cookiesNeededHr: function(){
-    cookiesNeeded = this.custHr() * this.avgCookiesHr;
-    return Math.ceil(cookiesNeeded);
-  },
-  theLoop: function(){
-    newDiv = document.createElement('DIV');
-    newDiv.setAttribute('id', this.storeName + " Div");
-    listContainer = document.createElement('UL');
-    newDiv.innerHTML = "<h2 id='" + this.storeName + " Heading'>" + this.storeName + "</h2>";
-    for(i=0; i < this.hoursArray.length; i++) {
-      this.listHr.push(this.cookiesNeededHr());
-      listItem = document.createElement('LI');
-      listItem.textContent = this.hoursArray[i] + this.listHr[i];
-      listContainer.appendChild(listItem);
-      this.listTtl = this.listTtl + this.listHr[i];
-    }
-    listItem.textContent = "Total: " + this.listTtl;
-    listContainer.appendChild(listItem)
-    newDiv.appendChild(listContainer);
-    display.appendChild(newDiv);
-  }
-}
-
-var alki = {
-  minCustHr: 3,
-  maxCustHr: 24,
-  avgCookiesHr: 2.6,
-  storeName: "Alki",
-  hoursArray: ['10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: '],
-  listHr: [],
-  listTtl: 0,
-  custHr: function(){
-    variance = Math.floor(Math.random()*(this.maxCustHr - this.minCustHr +1) + this.minCustHr);
-    return variance;
-  },
-  cookiesNeededHr: function(){
-    cookiesNeeded = this.custHr() * this.avgCookiesHr;
-    return Math.ceil(cookiesNeeded);
-  },
-  theLoop: function(){
-    newDiv = document.createElement('DIV');
-    newDiv.setAttribute('id', this.storeName + " Div");
-    listContainer = document.createElement('UL');
-    newDiv.innerHTML = "<h2 id='" + this.storeName + " Heading'>" + this.storeName + "</h2>";
-    for(i=0; i < this.hoursArray.length; i++) {
-      this.listHr.push(this.cookiesNeededHr());
-      listItem = document.createElement('LI');
-      listItem.textContent = this.hoursArray[i] + this.listHr[i];
-      listContainer.appendChild(listItem);
-      this.listTtl = this.listTtl + this.listHr[i];
-    }
-    listItem.textContent = "Total: " + this.listTtl;
-    listContainer.appendChild(listItem)
-    newDiv.appendChild(listContainer);
-    display.appendChild(newDiv);
+for(i=-1; i <= hoursArray.length; i++){
+    var topRowItem = document.createElement('TH');
+    topRowItem.textContent = hoursArray[i];
+    topRow.appendChild(topRowItem);
+    if (i === hoursArray.length-1){
+    var topRowItem = document.createElement('TH');
+    topRowItem.textContent = "TOTAL";
+    topRow.appendChild(topRowItem);
   }
 }
 
@@ -180,4 +67,3 @@ seaTac.theLoop();
 southCenter.theLoop();
 bellSquare.theLoop();
 alki.theLoop();
-
