@@ -1,8 +1,8 @@
-var newStoreCounter = 1;
+var hoursArray = ['10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM'];
 var table = document.getElementById('table');
 var topRow = document.getElementById('topRow');
-var hoursArray = ['10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM'];
 var form = document.getElementById('theForm');
+var newStoreCounter = 1;
 function Store (minCustHr, maxCustHr, avgCookiesHr, storeName) {
   this.minCustHr =  minCustHr;
   this.maxCustHr = maxCustHr;
