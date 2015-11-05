@@ -3,7 +3,7 @@
 /*font-family: 'Ubuntu', sans-serif;*/
 /*font-family: 'Noticia Text', serif;*/
 
-body {
+html, body {
   font-family: 'Noticia Text', serif;
   margin:0px;
   color: #091C3C;
@@ -46,6 +46,7 @@ p {
   width: 35%;
 }
 table {
+  display: inline-block;
   font-family: 'Ubuntu', sans-serif;
   padding: 2%;
   margin-left: auto;
@@ -66,4 +67,14 @@ img {
   width: 200px;
   float: right;
 }
-
+form {
+  display: inline-block;
+  width: 25%;
+  margin-bottom: 4%;
+}
+input {
+  border-radius: 5px
+}
+#submitButton {
+  margin: 0 auto;
+}

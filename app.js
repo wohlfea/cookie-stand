@@ -75,7 +75,7 @@ newStoreCounter++;
 }
 function validateCreate(event){
   event.preventDefault();
-  console.log('you clicked the button');
+  console.log('User clicked the button');
   if (!event.target.locationInput.value || !event.target.minCustInput.value || !event.target.maxCustInput.value || !event.target.avgPerCustInput.value) {
     return alert('Fields cannot be empty!');
   } else if (isNaN(event.target.minCustInput.value) || isNaN(event.target.maxCustInput.value) || isNaN(event.target.avgPerCustInput.value)) {
