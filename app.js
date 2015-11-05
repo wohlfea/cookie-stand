@@ -13,24 +13,24 @@ function Store (minCustHr, maxCustHr, avgCookiesHr, storeName) {
   this.custHr = function(){
     variance = Math.floor(Math.random()*(this.maxCustHr - this.minCustHr +1) + this.minCustHr);
     return variance;
-  };
+  }
   this.cookiesNeededHr = function(){
     cookiesNeeded = this.custHr() * this.avgCookiesHr;
     return Math.ceil(cookiesNeeded);
-  };
+  }
   this.makeNewRow = function(){
     newRow = document.createElement('TR');
     newRow.setAttribute('id', this.storeName + " Row");
     newHeading = document.createElement('TH');
     newHeading.textContent = this.storeName;
     newRow.appendChild(newHeading);
-  };
+  }
   this.calcTotal = function() {
     if (i !== hoursArray.length){
     this.listTtl = this.listTtl + this.listHr[i];
     console.log(this.storeName + " " + hoursArray[i] + " " + this.listHr[i]);
     }
-  };
+  }
   this.theLoop = function(){
     this.makeNewRow();
     for(i=0; i <= hoursArray.length; i++) {
