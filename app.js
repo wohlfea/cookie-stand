@@ -3,6 +3,7 @@ var table = document.getElementById('table');
 var topRow = document.getElementById('topRow');
 var form = document.getElementById('theForm');
 var newStoreCounter = 1;
+
 function Store (minCustHr, maxCustHr, avgCookiesHr, storeName) {
   this.minCustHr =  minCustHr;
   this.maxCustHr = maxCustHr;
@@ -43,7 +44,7 @@ function Store (minCustHr, maxCustHr, avgCookiesHr, storeName) {
     tblItem.textContent = this.listTtl;
     newRow.appendChild(tblItem);
     table.appendChild(newRow);
-  };
+  }
 }
 
 var pikePlace = new Store(17, 88, 5.2, "Pike Place Market");
@@ -64,6 +65,7 @@ function makeTopRow (){
     }
   }
 }
+
 function createStore() {
 window['newStore'+newStoreCounter] = new Store(event.target.minCustInput.value, event.target.maxCustInput.value, event.target.avgPerCustInput.value, event.target.locationInput.value);
 window['newStore'+newStoreCounter].theLoop();
@@ -73,6 +75,7 @@ event.target.avgPerCustInput.value = null;
 event.target.locationInput.value = null;
 newStoreCounter++;
 }
+
 function validateCreate(event){
   event.preventDefault();
   console.log('User clicked the button');
@@ -80,11 +83,14 @@ function validateCreate(event){
     return alert('Fields cannot be empty!');
   } else if (isNaN(event.target.minCustInput.value) || isNaN(event.target.maxCustInput.value) || isNaN(event.target.avgPerCustInput.value)) {
     return alert('You entered a letter in a number field!');
-  } else {
+  } else if (event.target.minCustInput.value > event.target.maxCustInput.value) {
+    return alert('Maximum customers can not be less than minimum customers!');
+  }else {
     console.log('User entered Valid Input');
     createStore();
   };
 }
+
 makeTopRow();
 pikePlace.theLoop();
 seaTac.theLoop();
