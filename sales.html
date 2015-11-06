@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Cutive+Mono|Ubuntu:300|Noticia+Text' rel='stylesheet' type='text/css'>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href='normalize.css'>
+  <link rel="stylesheet" href="skeleton.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>Pat's Salmon Cookies<img id='logo' src='img/salmon.png'><br /><p id='slogan'>Salmon cookies made with fish, salmon cookies are delish!</p></header>
+  <div class='container'>
+    <h3>Cookies Needed Per Hour</h3>
+    <section class='row'>
+      <div class='nine columns' id='well'>
+          <table id='table'>
+            <thead>
+              <tr id="topRow"></tr>
+            </thead>
+            <tbody id='tbody'></tbody>
+          </table>
+      </div>
+      <form class='three columns'id='theForm'>
+        <fieldset>
+          <legend>Create New Store</legend>
+          <label>Cookie Stand Location:</label>
+          <input name="locationInput" type="text"><br>
+          <label>Minimum Customers Per Hour:</label>
+          <input name="minCustInput" type="text"><br>
+          <label>Maximum Customers Per Hour:</label>
+          <input name="maxCustInput" type="text"><br>
+          <label>Average Cookies Per Hour:</label>
+          <input name="avgPerCustInput" type="text"><br>
+          <button id='submitButton' type="submit">Create Store!</button>
+        </fieldset>
+      </form>
+    </section>
+  </div>
+  <footer></footer>
+  <script src="app.js"></script>
+</body>
+</html>
