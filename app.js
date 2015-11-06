@@ -91,6 +91,12 @@ function validateCreate(event){
   };
 }
 
+document.getElementById('logo').setAttribute('class','slideanimation');
+function reset() {
+  document.getElementById('logo').setAttribute('class','none');
+}
+window.setTimeout(reset, 3000);
+
 makeTopRow();
 pikePlace.theLoop();
 seaTac.theLoop();
@@ -98,3 +104,7 @@ southCenter.theLoop();
 bellSquare.theLoop();
 alki.theLoop();
 form.addEventListener('submit', validateCreate);
+
+
+
+
