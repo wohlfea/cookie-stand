@@ -7,6 +7,10 @@ html, body {
   font-family: 'Noticia Text', serif;
   color: #091C3C;
   background-color: #ACB2BB;
+  text-align: center;
+}
+button {
+  background-color: #D9DBDE;
 }
 header, footer {
   min-height: 130px;
@@ -22,9 +26,8 @@ header {
   margin-bottom: 4%;
 }
 footer {
-  margin-top: 4%;
+  margin-top: 2%;
   box-shadow: -2px -2px 10px 2px #091C3C;
-  padding: 20px;
 }
 h1, h2, h3 {
   text-align: center;
@@ -32,31 +35,20 @@ h1, h2, h3 {
   font-weight: bold;
   text-shadow: 1px 0 #091C3C, 2px 3px #091C3C, 3px 3px #091C3C, 0 1px #091C3C;
 }
-h1 {
-  font-size: 500%;
-}
-h2 {
-  font-size: 400%;
-}
-h3 {
-  font-size: 300%;
-}
-p {
-  margin-left:auto;
-  margin-right:auto;
-  text-align: justify;
-  width: 35%;
-}
-img {
+#logo {
   width: 200px;
   float: right;
+  margin-right: 25px;
 }
 input {
   width: 220px;
   border-radius: 5px
 }
 th {
-  border-bottom: 1px solid #E1E1E1; }
+  border-bottom: 1px solid #E1E1E1;
+}
+a {
+  text-decoration: none;
 }
 #well {
   font-family: 'Ubuntu', sans-serif;
@@ -77,8 +69,12 @@ th {
   font-size: 15px;
   text-shadow: 1px 0 #091C3C, 2px 3px #091C3C, 3px 3px #091C3C, 0 1px #091C3C;
 }
-
-.pic {
-  width: 20px;
-  border: 3px solid black;
+#salmon-days {
+width: 250px;
+  float: right;
+  color: #FFFEFC;
+  font-weight: bold;
+  text-align: center;
+  font-size: 15px;
+  text-shadow: 1px 0 #091C3C, 2px 3px #091C3C, 3px 3px #091C3C, 0 1px #091C3C;
 }
