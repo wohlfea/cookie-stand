@@ -83,7 +83,7 @@ function validateCreate(event){
     return alert('Fields cannot be empty!');
   } else if (isNaN(event.target.minCustInput.value) || isNaN(event.target.maxCustInput.value) || isNaN(event.target.avgPerCustInput.value)) {
     return alert('You entered a letter in a number field!');
-  } else if (event.target.minCustInput.value > event.target.maxCustInput.value) {
+  } else if (parseInt(event.target.minCustInput.value) > parseInt(event.target.maxCustInput.value)) {
     return alert('Maximum customers can not be less than minimum customers!');
   }else {
     console.log('User entered Valid Input');
@@ -91,11 +91,15 @@ function validateCreate(event){
   };
 }
 
+/* Animation */
+
 document.getElementById('logo').setAttribute('class','slideanimation');
 function reset() {
   document.getElementById('logo').setAttribute('class','none');
 }
 window.setTimeout(reset, 3000);
+
+/*Generate Table */
 
 makeTopRow();
 pikePlace.theLoop();
@@ -103,6 +107,9 @@ seaTac.theLoop();
 southCenter.theLoop();
 bellSquare.theLoop();
 alki.theLoop();
+
+/* Submit button listener */
+
 form.addEventListener('submit', validateCreate);
 
 
