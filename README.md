@@ -16,3 +16,8 @@ Nov 5th Update:
 Nov 6th Update:
 * Added fish animation. The CSS for this was altered CSS from
 * The CSS for this come from the keyframes animation section of the following cite: http://learn.shayhowe.com/advanced-html-css/transitions-animations/
+* index.html now references a separate js file.
+
+Nov 7th Update:
+* Added further CSS to make footer stick to bottom of page
+* Cleaned up HTML and CSS added notes etc.
